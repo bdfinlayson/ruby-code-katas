@@ -1,7 +1,7 @@
 class Multiples
   def self.compute(range, numbers)
     begin
-      find_multiples_of( numbers.map {|i| Integer i }, Integer(range) )
+      find_multiples_of( numbers.map {|i| Integer i }, Integer(range) ).reduce(:+)
     rescue ArgumentError => error
       error.message
     end
